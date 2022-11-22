@@ -1,3 +1,6 @@
+#!/usr/bin/expect
+set timeout 10
+
 # 安装
 sudo apt install zsh curl git -y
 
@@ -9,8 +12,11 @@ echo $SHELL
 # 返回 /usr/bin/zsh 即表示成功；若没成功，重启试试看
 
 # 通过 curl
-sh -c "$(curl -fsSL https://jihulab.com/rami/ohmyzsh/-/raw/master/tools/install.sh)"
+spawn sh -c "$(curl -fsSL https://jihulab.com/rami/ohmyzsh/-/raw/master/tools/install.sh)"
 
+expect "default shell"
+
+send "Y\r"
 
 
 # 自动补全 zsh-autosuggestions
