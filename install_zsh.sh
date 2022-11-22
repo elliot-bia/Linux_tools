@@ -9,16 +9,16 @@ echo $SHELL
 # 返回 /usr/bin/zsh 即表示成功；若没成功，重启试试看
 
 # 通过 curl
-sh -c "$(curl -fsSL https://gitee.com/neeyongliang/ohmyzsh/blob/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://jihulab.com/rami/ohmyzsh/-/raw/master/tools/install.sh)"
 
 
 
 # 自动补全 zsh-autosuggestions
-git clone https://gitee.com/SJJ-dot/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://jihulab.com/rami/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 
 # 代码高亮 zsh-syntax-highlighting
-git clone https://gitee.com/JinfengX/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://jihulab.com/rami/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 
 # 
