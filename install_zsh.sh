@@ -1,4 +1,4 @@
-#!/usr/bin/expect
+#!/bin/sh
 set timeout 10
 
 # 安装
@@ -11,12 +11,11 @@ chsh -s /bin/zsh
 echo $SHELL
 # 返回 /usr/bin/zsh 即表示成功；若没成功，重启试试看
 
+
 # 通过 curl
-spawn sh -c "$(curl -fsSL https://jihulab.com/rami/ohmyzsh/-/raw/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://jihulab.com/rami/ohmyzsh/-/raw/master/tools/install.sh)" "" --unattended
 
-expect "default shell"
 
-send "Y\r"
 
 
 # 自动补全 zsh-autosuggestions
@@ -27,13 +26,15 @@ git clone https://jihulab.com/rami/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zs
 git clone https://jihulab.com/rami/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 
-# 
-sed -i '/ZSH_THEME/ c\
-ZSH_THEME=agnoster
+sed -i '1i export LC_ALL=C.UTF-8\
+export LANG=C.UTF-8
 ' ~/.zshrc
 
-sed -i 's/plugins=(/plugins=( git\
-zsh-autosuggestions\
-zsh-syntax-highlighting/g' ~/.zshrc
+sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
 
-source ~/.zshrc
+sed -i 's/plugins=(git/plugins=( git\
+zsh-autosuggestions\
+zsh-syntax-highlighting\
+/g' ~/.zshrc 
+
+zsh
