@@ -109,7 +109,7 @@ main() {
             ;;
     esac
     # 选项菜单
-    echo "\n检测到Linux系统为: $system_info\n"
+    echo -e "\n检测到Linux系统为: $system_info\n"
     echo "如果有其他系统,可以选择对应的数字"
     echo "1. Ubuntu 22"
     echo "2. Ubuntu 20"
