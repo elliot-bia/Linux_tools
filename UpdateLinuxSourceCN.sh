@@ -87,9 +87,6 @@ get_system_info() {
 main() {
     get_system_info
 
-    # 输出当前系统信息
-    echo "Detected system: $system_info"
-
     # 根据系统信息设置选项值
     case $system_info in
         "Ubuntu 22")
@@ -112,7 +109,7 @@ main() {
             ;;
     esac
     # 选项菜单
-    echo "当前系统为: $system_info, 请问是否正确?(y/n)"
+    echo "\n检测到Linux系统为: $system_info\n"
     echo "如果有其他系统,可以选择对应的数字"
     echo "1. Ubuntu 22"
     echo "2. Ubuntu 20"
@@ -120,7 +117,7 @@ main() {
     echo "4. CentOS 7"
     echo "5. CentOS 8"
 
-    read -p "请选择选项: " choice </dev/tty
+    read -p "当前系统为: $system_info, 请问是否正确?(y/n): " choice </dev/tty
 
    if [ "$choice" = "y" ] || [ "$choice" = "Y" ]; then
         case $OPTION in

@@ -10,7 +10,7 @@ It's used to update commonly used Linux sources  in China, include Ubuntu 22, 20
 
 **Usage/用法**
 
-`curl -s "https://jihulab.com/rami/linux_tools/-/raw/main/UpdateLinuxSourceCN.sh" | bash`
+`curl -sSL "https://jihulab.com/rami/linux_tools/-/raw/main/UpdateLinuxSourceCN.sh" | bash /dev/stdin`
 
 - [install_zsh](./install_zsh.sh)
 
