@@ -120,7 +120,7 @@ main() {
     echo "4. CentOS 7"
     echo "5. CentOS 8"
 
-    read -p "请选择选项: " choice
+    read -p "请选择选项: " choice </dev/tty
 
    if [ "$choice" = "y" ] || [ "$choice" = "Y" ]; then
         case $OPTION in
