@@ -10,56 +10,284 @@ Ubuntu22AptSource(){
     # Ubuntu 22 操作系统
     echo "This is Ubuntu 22.\n Updating source"
     cp /etc/apt/sources.list /etc/apt/sources.list.bak; \
-    echo """
-    deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
-    deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
-    deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
-    deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
-    """> /etc/apt/sources.list;\
+    
+    echo "选择对应的源"
+    echo "1. 清华(默认)"
+    echo "2. 阿里"
+    echo "3. 腾讯"
+    echo "4. 163"
+
+    read -p "请选择对应的源(默认可以直接回车): " choice_source </dev/tty
+
+    case $choice_source in
+    "")
+        echo """
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+        """> /etc/apt/sources.list;\
+        ;;
+    1)
+        echo """
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+        """> /etc/apt/sources.list;\
+        ;;
+    2)
+        echo """
+        deb https://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
+        deb https://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse
+        deb https://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse
+        deb https://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
+        """> /etc/apt/sources.list;\
+        ;;
+    3)
+        echo """
+        deb https://mirrors.cloud.tencent.com/ubuntu/ jammy main restricted universe multiverse
+        deb https://mirrors.cloud.tencent.com/ubuntu/ jammy-updates main restricted universe multiverse
+        deb https://mirrors.cloud.tencent.com/ubuntu/ jammy-backports main restricted universe multiverse
+        deb https://mirrors.cloud.tencent.com/ubuntu/ jammy-security main restricted universe multiverse
+        """> /etc/apt/sources.list;\
+        ;;
+    4)
+        echo """
+        deb https://mirrors.163.com/ubuntu/ jammy main restricted universe multiverse
+        deb https://mirrors.163.com/ubuntu/ jammy-updates main restricted universe multiverse
+        deb https://mirrors.163.com/ubuntu/ jammy-backports main restricted universe multiverse
+        deb https://mirrors.163.com/ubuntu/ jammy-security main restricted universe multiverse
+        """> /etc/apt/sources.list;\
+        ;;
+    *)
+        echo "选择出错!."
+        echo "操作被中断."
+        exit 1
+        ;;
+    esac
+
     apt-get clean all;\
     apt-get update
 }
 Ubuntu20AptSource(){
     echo "This is Ubuntu 20.\n Updating source"
     cp /etc/apt/sources.list /etc/apt/sources.list.bak; \
-    echo """
-    deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse
-    deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
-    deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
-    deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse
-    """> /etc/apt/sources.list;\
+
+    echo "选择对应的源"
+    echo "1. 清华(默认)"
+    echo "2. 阿里"
+    echo "3. 腾讯"
+    echo "4. 163"
+
+    read -p "请选择对应的源(默认可以直接回车): " choice_source </dev/tty
+
+    case $choice_source in
+    "")
+        echo """
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+        """> /etc/apt/sources.list;\
+        ;;
+    1)
+        echo """
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+        """> /etc/apt/sources.list;\
+        ;;
+    2)
+        echo """
+        deb https://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+        deb https://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+        deb https://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+        deb https://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+        """> /etc/apt/sources.list;\
+        ;;
+    3)
+        echo """
+        deb https://mirrors.cloud.tencent.com/ubuntu/ focal main restricted universe multiverse
+        deb https://mirrors.cloud.tencent.com/ubuntu/ focal-updates main restricted universe multiverse
+        deb https://mirrors.cloud.tencent.com/ubuntu/ focal-backports main restricted universe multiverse
+        deb https://mirrors.cloud.tencent.com/ubuntu/ focal-security main restricted universe multiverse
+        """> /etc/apt/sources.list;\
+        ;;
+    4)
+        echo """
+        deb https://mirrors.163.com/ubuntu/ focal main restricted universe multiverse
+        deb https://mirrors.163.com/ubuntu/ focal-updates main restricted universe multiverse
+        deb https://mirrors.163.com/ubuntu/ focal-backports main restricted universe multiverse
+        deb https://mirrors.163.com/ubuntu/ focal-security main restricted universe multiverse
+        """> /etc/apt/sources.list;\
+        ;;
+    *)
+        echo "选择出错!."
+        echo "操作被中断."
+        exit 1
+        ;;
+    esac
+
+
     apt-get clean all;\
     apt-get update
 }
 Ubuntu16AptSource(){
     echo "This is Ubuntu 20.\n Updating source"
     cp /etc/apt/sources.list /etc/apt/sources.list.bak; \
-    echo """
-    deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse
-    deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
-    deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
-    deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
-    """> /etc/apt/sources.list;\
+
+    echo "选择对应的源"
+    echo "1. 清华(默认)"
+    echo "2. 阿里"
+    echo "3. 腾讯"
+    echo "4. 163"
+
+    read -p "请选择对应的源(默认可以直接回车): " choice_source </dev/tty
+
+    case $choice_source in
+    "")
+        echo """
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
+        """> /etc/apt/sources.list;\
+        ;;
+    1)
+        echo """
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
+        deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
+        """> /etc/apt/sources.list;\
+        ;;
+    2)
+        echo """
+        deb https://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse
+        deb https://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse
+        deb https://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse
+        deb https://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse
+        """> /etc/apt/sources.list;\
+        ;;
+    3)
+        echo """
+        deb https://mirrors.cloud.tencent.com/ubuntu/ xenial main restricted universe multiverse
+        deb https://mirrors.cloud.tencent.com/ubuntu/ xenial-updates main restricted universe multiverse
+        deb https://mirrors.cloud.tencent.com/ubuntu/ xenial-backports main restricted universe multiverse
+        deb https://mirrors.cloud.tencent.com/ubuntu/ xenial-security main restricted universe multiverse
+        """> /etc/apt/sources.list;\
+        ;;
+    4)
+        echo """
+        deb https://mirrors.163.com/ubuntu/ xenial main restricted universe multiverse
+        deb https://mirrors.163.com/ubuntu/ xenial-updates main restricted universe multiverse
+        deb https://mirrors.163.com/ubuntu/ xenial-backports main restricted universe multiverse
+        deb https://mirrors.163.com/ubuntu/ xenial-security main restricted universe multiverse
+        """> /etc/apt/sources.list;\
+        ;;
+    *)
+        echo "选择出错!."
+        echo "操作被中断."
+        exit 1
+        ;;
+    esac
+
     apt-get clean all;\
     apt-get update
 }
 CentOS7YumSource(){
     # CentOS 7 操作系统
     echo "CentOS 7, updating source"
-    cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup;\
-    sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
-         -e 's|^#baseurl=http://mirror.centos.org/centos|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos|g' \
-         -i.bak \
-         /etc/yum.repos.d/CentOS-*.repo
+
+    case $choice_source in
+    "")
+        sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+            -e 's|^#baseurl=http://mirror.centos.org/centos|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos|g' \
+            -i.bak \
+            /etc/yum.repos.d/CentOS-*.repo
+        ;;
+    1)
+        sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+            -e 's|^#baseurl=http://mirror.centos.org/centos|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos|g' \
+            -i.bak \
+            /etc/yum.repos.d/CentOS-*.repo
+        ;;
+    2)
+        sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+            -e 's|^#baseurl=http://mirror.centos.org/centos|baseurl=https://mirrors.aliyun.com/centos|g' \
+            -i.bak \
+            /etc/yum.repos.d/CentOS-*.repo
+        ;;
+    3)
+        sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+            -e 's|^#baseurl=http://mirror.centos.org/centos|baseurl=https://mirrors.cloud.tencent.com/centos|g' \
+            -i.bak \
+            /etc/yum.repos.d/CentOS-*.repo
+        ;;
+    4)
+        sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+            -e 's|^#baseurl=http://mirror.centos.org/centos|baseurl=https://mirrors.163.com/centos|g' \
+            -i.bak \
+            /etc/yum.repos.d/CentOS-*.repo
+        ;;
+    *)
+        echo "选择出错!."
+        echo "操作被中断."
+        exit 1
+        ;;
+    esac
+
+
+
     yum clean all;\
     yum makecache
 }
 CentOS8YumSource(){
     echo "CentOS 7, updating source"
-    sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
-         -e 's|^#baseurl=http://mirror.centos.org/$contentdir|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos|g' \
-         -i.bak \
-         /etc/yum.repos.d/CentOS-*.repo
+
+
+    case $choice_source in
+    "")
+        sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+            -e 's|^#baseurl=http://mirror.centos.org/$contentdir|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos|g' \
+            -i.bak \
+            /etc/yum.repos.d/CentOS-*.repo
+        ;;
+    1)
+        sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+            -e 's|^#baseurl=http://mirror.centos.org/$contentdir|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos|g' \
+            -i.bak \
+            /etc/yum.repos.d/CentOS-*.repo
+        ;;
+    2)
+        sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+            -e 's|^#baseurl=http://mirror.centos.org/$contentdir|baseurl=https://mirrors.aliyun.com/centos|g' \
+            -i.bak \
+            /etc/yum.repos.d/CentOS-*.repo
+        ;;
+    3)
+        sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+            -e 's|^#baseurl=http://mirror.centos.org/$contentdir|baseurl=https://mirrors.cloud.tencent.com/centos|g' \
+            -i.bak \
+            /etc/yum.repos.d/CentOS-*.repo
+        ;;
+    4)
+        sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+            -e 's|^#baseurl=http://mirror.centos.org/$contentdir|baseurl=https://mirrors.163.com/centos|g' \
+            -i.bak \
+            /etc/yum.repos.d/CentOS-*.repo
+        ;;
+    *)
+        echo "选择出错!."
+        echo "操作被中断."
+        exit 1
+        ;;
+    esac
+
+
+
     yum clean all;\
     yum makecache
 }
