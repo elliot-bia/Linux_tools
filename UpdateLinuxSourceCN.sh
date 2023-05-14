@@ -8,7 +8,7 @@ author=rami
 
 Ubuntu22AptSource(){
     # Ubuntu 22 操作系统
-    echo "This is Ubuntu 22.\n Updating source"
+    echo -e "This is Ubuntu 22.\n Updating source"
     cp /etc/apt/sources.list /etc/apt/sources.list.bak; \
     
     echo "选择对应的源"
@@ -71,7 +71,7 @@ Ubuntu22AptSource(){
     apt-get update
 }
 Ubuntu20AptSource(){
-    echo "This is Ubuntu 20.\n Updating source"
+    echo -e "This is Ubuntu 20.\n Updating source"
     cp /etc/apt/sources.list /etc/apt/sources.list.bak; \
 
     echo "选择对应的源"
@@ -135,7 +135,7 @@ Ubuntu20AptSource(){
     apt-get update
 }
 Ubuntu16AptSource(){
-    echo "This is Ubuntu 20.\n Updating source"
+    echo -e "This is Ubuntu 20.\n Updating source"
     cp /etc/apt/sources.list /etc/apt/sources.list.bak; \
 
     echo "选择对应的源"
