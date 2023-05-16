@@ -56,8 +56,8 @@ UbuntuAptSource(){
 
     MirrorsList
 
-    sudo sed -e "s@//.*archive.ubuntu.com@//$MirrorsSites@g" \
-        -e "s@//.*security.ubuntu.com@//$MirrorsSites@g" \
+    sudo sed -e "s#//.*archive.ubuntu.com#//$MirrorsSites#g" \
+        -e "s#//.*security.ubuntu.com#//$MirrorsSites#g" \
         -i.bak \
     /etc/apt/sources.list
 

@@ -4,9 +4,9 @@ Some  Linux  Tools
 
 - [UpdateLinuxSourceCN](./UpdateLinuxSourceCN.sh)
 
-It's used to update commonly used Linux sources  in China, include Ubuntu 22, 20, 16 and CentOS 7, 8. And you can change to Aliyun, Tencent, 163 sources
+It's used to update commonly used Linux sources  in China, include Ubuntu, CentOS 7, Kali and Debian. And you can change to Aliyun, Tencent, 163, huawei, ustc sources
 
-> 用来更新国内常见的linux源，包括ubuntu 22, 20, 16 and CentOS 7, 8。你还可以选择阿里，腾讯和163源
+> 用来更新国内常见的linux源，包括Ubuntu, CentOS 7, Kali 和 Debian.。你还可以选择阿里，腾讯，163，华为和中科大源
 
 **Usage/用法**
 
