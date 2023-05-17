@@ -2,7 +2,7 @@
 set timeout 10
 
 # 安装
-sudo apt install zsh curl git -y
+sudo apt install zsh curl git fonts-powerline -y
 
 # 将 zsh 设置为默认 shell
 chsh -s /bin/zsh
